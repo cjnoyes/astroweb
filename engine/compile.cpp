@@ -13,7 +13,7 @@
 #include <math.h>
 #include "utlduad.h"
 #include "fixstar.h"
-#include "arabpt.h"
+#include "Arabpt.h"
 #include <memory.h>
 #include "compile.hpp"
 #include "orbs.h"

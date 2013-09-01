@@ -12,7 +12,7 @@
 #include <math.h>
 #include "utlduad.h"
 #include "fixstar.h"
-#include "arabpt.h"
+#include "Arabpt.h"
 #include "setup.hpp"
 #include "options.hpp"
 #include <memory.h>
