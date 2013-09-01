@@ -10,7 +10,7 @@ else
 endif
 
 PROJECT = astrowweb
-CC = "F:\x64-4.8.1-win32-sjlj-rev1\mingw64\bin\g++.exe"
+CC = "g++"
 
 ifeq ($(CFG),Debug)
   OBJ_DIR = Debug
@@ -148,7 +148,7 @@ SRC_OBJS = \
 
 define build_target
 @echo Linking...
-@$(CC) -o "$(OUTPUT_DIR)\$(TARGET)" $(SRC_OBJS) $(LIB_DIRS) $(LIBS) $(LDFLAGS)
+@$(CC) -o "$(OUTPUT_DIR)/$(TARGET)" $(SRC_OBJS) $(LIB_DIRS) $(LIBS) $(LDFLAGS)
 endef
 
 define compile_source
@@ -165,20 +165,20 @@ $(TARGET): print_header directories $(SRC_OBJS)
 
 cleanall:
 	@echo Deleting intermediate files for 'astrowweb - $(CFG)'
-	-@del $(OBJ_DIR)\*.o
-	-@del "$(OUTPUT_DIR)\$(TARGET)"
+	-@del $(OBJ_DIR)/*.o
+	-@del "$(OUTPUT_DIR)/$(TARGET)"
 	-@rmdir "$(OUTPUT_DIR)"
 
 clean:
 	@echo Deleting intermediate files for 'astrowweb - $(CFG)'
-	-@del $(OBJ_DIR)\*.o
+	-@del $(OBJ_DIR)/*.o
 
 print_header:
 	@echo ----------Configuration: astrowweb - $(CFG)----------
 
 directories:
-	-@if not exist "$(OUTPUT_DIR)\$(NULL)" mkdir "$(OUTPUT_DIR)"
-	-@if not exist "$(OBJ_DIR)\$(NULL)" mkdir "$(OBJ_DIR)"
+	-@if not exist "$(OUTPUT_DIR)/$(NULL)" mkdir "$(OUTPUT_DIR)"
+	-@if not exist "$(OBJ_DIR)/$(NULL)" mkdir "$(OBJ_DIR)"
 
 $(OBJ_DIR)/anomaly.o: ../engdll/anomaly.cpp
 
