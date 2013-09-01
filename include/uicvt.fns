@@ -1,0 +1,12 @@
+extern int cvt_nlocdb_2_dsk( struct LOC_DB *ldp, struct D_LOC_DB *dldp );
+extern int cvt_nbirthdb_2_dsk( struct BIRTH_DB *bdp, union DBR *dbdp, struct RECT_DATA *rdp );
+extern struct LOC_DB *cvt_dsk_2_nlocdb( struct LOC_DB *ldp, struct D_LOC_DB *dldp );
+extern struct BIRTH_DB *cvt_dsk_2_nbirthdb( struct BIRTH_DB *bdp, union DBR *dbdp, struct RECT_DATA *rdp );
+extern struct O_FILE_DB *cvt_filedb_2_ofiledb( struct W16_FILE_DB *fdp, struct O_FILE_DB *ofdp );
+extern struct W16_FILE_DB *cvt_ofiledb_2_nfiledb( struct W16_FILE_DB *nfdp, struct O_FILE_DB *fdp );
+extern struct W16_FILE_DB *cvt_filedb_2_win( struct W16_FILE_DB *fdp );
+extern struct W16_FILE_DB *cvt_win_2_filedb( struct W16_FILE_DB *fdp );
+extern struct BIRTH_DB *BirthCvtToWin( struct BIRTH_DB *p );
+extern struct LOC_DB *LocCvtToWin( struct LOC_DB *p );
+extern struct W16_FILE_DB *cvt_filedb_2_w16filedb( struct W16_FILE_DB *ofdp, struct FILE_DB *fdp );
+extern struct FILE_DB *cvt_w16filedb_2_filedb( struct W16_FILE_DB *ofdp, struct FILE_DB *fdp );

@@ -1,0 +1,62 @@
+extern char *enquote_strclip( unsigned char *str, unsigned char *buf );
+extern char *xstrupr( char *buf );
+extern char *out_bool_query( FILE *stream, int var, char *fmt );
+extern char *out_mint_query( FILE *stream, short *vars, short *test, int cnt, char *fmt );
+extern char *next_arg( FILE *stream, char *text );
+extern int output_aspects( FILE *stream, char *s1, int pl,
+			       struct ASPEC *as, char *rpt, int type=0 );
+extern int output_aspects2( FILE *stream, char *s1, char *s2, int pl,
+			       struct ASPEC *as, char *rpt, int type=0 );
+extern int output_title( FILE *stream, char *s1, char *s2, char *s3, char *rpt );
+extern int out_print_cusps( FILE *stream, int i, short *house_cusps, char *rpt );
+extern int o_print_cusps( FILE *stream, short *house_cusps, char *rpt );
+extern int out_first_name( FILE *stream, int cap, char *name );
+int output_birth_header( FILE *stream, unsigned short mode, struct BIRTH_DB *data,
+		 char *s1, int house_mode, struct DATA_PACKET *dpk, char *rpt  );
+extern int output_rect_header( FILE *stream, struct RECT_DATA *rd, char *s1, char *rpt );
+extern int output_ts_house_mode( FILE *stream, char *s1, int mode, int house_mode, char *rpt );
+extern int output_reloc_header( FILE *stream, char *s1, struct DATA_PACKET *dpk, char *rpt );
+extern int output_prog_header( FILE *stream, char *s1, struct DATA_PACKET *dpk, char *rpt );
+extern int output_trans_header( FILE *stream, char *s1, struct DATA_PACKET *dpk, char *rpt );
+extern int get_tables( char *table_name, int *global );
+extern const char *get_report( int table, int gtable, int key );
+extern char *get_report_strdup( int table, int gtable, int key );
+extern int output_birth_head_group( FILE *stream, unsigned short mode, struct BIRTH_DB *data,
+   int table, int house_mode, char *cmt, struct DATA_PACKET *dpk, int gtable );
+extern output_comp_head_group( FILE *stream, unsigned short mode,
+    struct BIRTH_DB *data, struct BIRTH_DB *padata, int table,
+    int house_mode, char *cmt, struct DATA_PACKET *dpk, int gtable );
+extern int output_trans_head_group( FILE *stream, unsigned short mode, struct BIRTH_DB *data, char *cmt,
+   int table, int house_mode, char *name, struct DATA_PACKET *dpk, int gtable );
+extern int output_return_title( FILE *stream, int chart, char *s1, char *s2, char *rpt );
+extern int output_return_head( FILE *stream, char *s1, struct BIRTH_DB *data,
+    struct RETURN_DATA *retd, struct DATA_PACKET *dpk, int house_mode, char *rpt );
+extern int output_return_entry( FILE *stream, int chart, int reno, struct DATES *d, TIM *t, int ap, char *s1, char *rpt );
+extern int close_tables( int table, int global );
+extern int output_midpoint_sign( FILE *stream, short planet, struct MIDPT *ptr,
+						     char *s1, char *rpt, int type = 0 );
+extern int output_midpoint_house( FILE *stream, short planet, struct MIDPT *ptr,
+						    char *s1, char *rpt, int type = 0 );
+extern int output_planet_house( FILE *stream, short planet, struct AS_INF *ptr,
+					    char *s1, char *s2, char *rpt, int type = 0 );
+extern int output_planet_sign( FILE *stream, short planet, struct AS_INF *ptr,
+	    int type, void *data, unsigned short mode, char *s1, char *s2, char *rpt );
+extern int output_planet_sign_ext( FILE *stream, short planet, struct AS_INF_EXT *aie,
+						     char *s1,  char *rpt, int type = 0 );
+extern int output_house_sign( FILE *stream, short house, short minutes, int *cusp, int *sign, char *s1, char *rpt );
+extern int output_trans_id( FILE *stream, int transit, struct DATES *d,
+					char *s1, char *s2, char *rpt );
+extern int out_do_house_cusps(FILE *stream, char *s1, char *s2, char *s3,
+					int table, int global, short *hsc, int key );
+extern int output_scout_planet( FILE *stream, char *s1, char *s2, int sp, char *rpt );
+extern int output_genders( FILE *stream, char *s1, char *s2, char *rpt );
+extern int output_elements( FILE *stream, char *s1, char *s2, char *rpt );
+extern int output_qualities( FILE *stream, char *s1, char *s2, char *rpt );
+extern int output_hemispheres( FILE *stream, char *s1, char *s2, char *rpt );
+extern int output_functionals( FILE *stream, char *s1, char *s2, char *rpt );
+extern int output_modals( FILE *stream, char *s1, char *s2, char *rpt );
+extern int output_aspect_count( FILE *stream, char *s1, char *s2, char *rpt );
+extern int output_sex_codes( FILE *stream, int sex, int sexno, int table );
+extern int output_sign_count( FILE *stream, char *s1, char *s2, char *rpt );
+extern int output_house_count( FILE *stream, char *s1, char *s2, char *rpt );
+

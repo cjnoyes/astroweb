@@ -1,0 +1,13 @@
+extern void p_jupiter( JULIAN *j, PLAN_ELE *p, DELTA *d );
+extern void p_saturn( PLAN_ELE *p, DELTA *d );
+extern void remove_j(void);
+void remove_j1(void);
+extern int make_j( JULIAN *j, int pno );
+extern int make_j1( JULIAN *j, int pno );
+extern void p_mercury( PLAN_ELE *p, DELTA *d );
+extern void p_venus( JULIAN *j, PLAN_ELE *p, DELTA *d );
+extern void p_mars( JULIAN *j, PLAN_ELE *p, DELTA *d );
+extern void p_uranus( PLAN_ELE *p, DELTA *d, JULIAN *j );
+extern void p_neptune( PLAN_ELE *p, DELTA *d );
+extern int prepare_planetary_data( JULIAN *j );
+extern void reset_plan_ptr(void);

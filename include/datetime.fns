@@ -1,0 +1,21 @@
+extern  short days_to_month(short month,short year);
+extern  short bad_date(struct DATES *d);
+extern  short bad_time(struct TIM *t,short mode);
+extern  short day_number(short st_month,struct DATES *dp);
+extern  double calc_base_side(struct DATES *dp );
+extern  short adj_time(struct TIM *tp);
+extern  void proc_longitude(struct DEG_MIN *longitude,struct TIM *local);
+extern  void sidereal_time(struct DATES *dp,short hours,short min,struct DEG_MIN *longitude,struct TIM *sidereal,char hem);
+extern  short adj_date(struct DATES *dp);
+extern  short noon_date(struct DATES *dp,struct DATES *noon_date,struct TIM *noon,struct TIM *tp,short local_hours, short local_minutes);
+extern  double base_julian_date( struct DATES *dp );
+extern  double julian_date( struct DATES *dp, int hours, int minutes, int epoch );
+extern  void julian_calc( struct DATES *dp, int hours, int min, struct JULIAN *jp );
+extern  struct TIM *right_asc_rads_to_sid_time( double ram, struct TIM * buf);
+extern  void calc_side_to_hm( struct DATES *dp, double xside, short *hours, short *minutes );
+extern  void sidereal_time_to_gmt_hrs( struct DATES *dp, short *hours, short *min, struct DEG_MIN *longitude,
+	 struct TIM *sidereal, char hem );
+extern  void hs_min_to_TIM( struct DATES *dp, struct TIM *time, struct DEG_MIN *lng, struct DEG_MIN *lat,
+	 int hs_min, int hs_sys, int hs, int loc_hours, int loc_minutes );
+extern void julian_update( struct JULIAN *j );
+extern void julian_to_date_tim( struct JULIAN *j, struct DATES *d, struct TIM *t );

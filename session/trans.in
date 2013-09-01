@@ -1,0 +1,40 @@
+[Birth]
+date=3/29/1958
+time=17:35:00
+long=-75 35 W
+lat=40 25 N
+tzhours=-5
+tzminutes=0
+
+[Comp]
+date=3/27/1966
+time=13:47:00
+long=-118 15 W
+lat=34 4 N
+tzhours=-8
+tzminutes=0
+
+[Trans]
+date=9/11/2001
+time=09:00:00
+long=-75 35 W
+lat=40 25 N
+tzhours=-5
+tzminutes=0
+
+[BirthRect]
+known=1
+system=0
+[CompRect]
+known=1
+system=0
+
+[TransData]
+count=10
+start=1
+end=10
+offset=0/1/0
+
+[ProgrData]
+system=
+date=
