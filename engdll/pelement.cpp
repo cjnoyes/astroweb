@@ -156,7 +156,7 @@ int prepare_planetary_data( JULIAN *j )
     return( 0 );
     }
  fi = data_name("ORBITELE.DAT");
- if ( ( stream = fopen( fi, OPENMODEREAD ) ) == -1 ) {
+ if ( ( stream = fopen( fi, OPENMODEREAD ) ) ==NULL ) {
     do_error( fi );
     delete plan_ptr;
     delete op;
