@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <memory.h>
 #include "astro.h"
-#include "arabpt.h"
+#include "Arabpt.h"
 #include "compute.fns"
 #include "errors.fns"
 #include "flags.h"
