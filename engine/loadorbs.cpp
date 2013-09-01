@@ -31,7 +31,7 @@ int load_orbs( int context )
  static int status = -1;
 
  strcpy( name, set_path("ASTRO.ORB", DATA_F) );
- if ( ( stream = fopen( name, "rb" ) ) == NULL ) {
+ if ( ( stream = fopen( name, OPENMODEREAD ) ) == NULL ) {
     do_error( name );
     return( 0 );
     }

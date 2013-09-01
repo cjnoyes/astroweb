@@ -12,6 +12,15 @@
 #define EDIT_F      8
 #define CURRENT_F   9
 #define DEFAULT_FLD 10
+
+#ifndef WINVER
+#define DIRSEPCH  '/'
+#define DIRSEP    "/"
+#else
+#define DIRSEPCH  '\\'
+#define DIRSEP    "\\"
+#endif
+
 extern char *set_path( char *name, int dir );
 extern char *replace_ext( char *buf, char *name, char *ext );
 extern char *make_name( char *buf, char *name, int dir );

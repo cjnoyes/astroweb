@@ -3,7 +3,7 @@
 #include <float.h>
 #include <math.h>
 #include <fcntl.h>
-#include <io.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "paths.hpp"
 #include <stdio.h>
@@ -137,10 +137,11 @@ int prepare_planetary_data( JULIAN *j )
  char *fi;
  double *a;
  LONG_DOUBLE tmp, aa;
- int i=0, handle=0;
+ int i=0;
  ORBIT_ELE *op;
  PLAN_ELE *pp;
-
+ FILE *stream;
+ 
  plan_ptr = new PLAN_ELE[PLAN_COUNT];
  op = new ORBIT_ELE;
  if ( plan_ptr == NULL || op == NULL ) {
@@ -155,7 +156,7 @@ int prepare_planetary_data( JULIAN *j )
     return( 0 );
     }
  fi = data_name("ORBITELE.DAT");
- if ( ( handle = open( fi, O_BINARY|O_RDONLY ) ) == -1 ) {
+ if ( ( stream = fopen( fi, OPENMODEREAD ) ) == -1 ) {
     do_error( fi );
     delete plan_ptr;
     delete op;
@@ -163,7 +164,7 @@ int prepare_planetary_data( JULIAN *j )
     return( 0 );
     }
  for ( i = 0, pp = plan_ptr; i < 8; ++i, ++pp ) {
-     read( handle, op, sizeof( ORBIT_ELE ) );
+     fread( op, sizeof( ORBIT_ELE ), 1, stream );
      a = op->mean_long;
      aa = (LONG_DOUBLE) a[1] * j->jd_cent;
      aa = murem( aa );
@@ -202,7 +203,7 @@ int prepare_planetary_data( JULIAN *j )
      pp->mean_anomaly = d2r( pp->mean_long - pp->perhelion );
      }
 */
- close( handle );
+ fclose( stream );
  delete op;
  earth_longitude = sun_longitude + PI;
  return( 1 );

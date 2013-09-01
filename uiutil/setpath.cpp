@@ -38,15 +38,15 @@ void removeDots( char *buf )
 char *set_path( char *name, int type )
 {
  strcpy(buffer, getBaseDir());
- if (buffer[strlen(buffer)-1] != '\\') {
-    strcat(buffer,"\\");
+ if (buffer[strlen(buffer)-1] != DIRSEPCH) {
+    strcat(buffer,DIRSEP);
  }
  switch (type) {
    case DATA_F:
-	   strcat(buffer,"data\\");
+	   strcat(buffer,"data" DIRSEP);
 	   break;
    case USER_F:
-	   strcat(buffer,"session\\");
+	   strcat(buffer,"session" DIRSEP);
 	   break;
   }
   strcat(buffer, name);

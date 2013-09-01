@@ -28,7 +28,12 @@
 #endif
 
 #ifndef WINVER
-typedef short BOOL;
+#ifndef BOOL
+#define BOOL short
+#define OPENMODEREAD "r"
+#endif
+#else
+#define OPENMODEREAD "rb"
 #endif
 
 /* system constants */

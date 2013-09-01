@@ -48,7 +48,7 @@ asteroidcalc::asteroidcalc(JULIAN *j, LONG_DOUBLE sun)
 {
  jul = j;
  char *p =data_name("asteroid.dat");
- stream = fopen(p,"rb");
+ stream = fopen(p,OPENMODEREAD);
  if ( stream == NULL ) {
     do_error(p);
 	count=0;
