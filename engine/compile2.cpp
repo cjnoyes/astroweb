@@ -18,10 +18,10 @@
 #include <memory.h>
 #include "compile.hpp"
 #include "orbs.h"
-#include "io.h"
 #include "OptionsReader.h"
 #include "files.h"
 #include "DataReader.h"
+#include <string.h>
 
 #define debugLogOut(p) 
 
