@@ -17,7 +17,7 @@
 #include <string.h>
 #include "lngdbl.h"
 #include "setjmp.h"
-
+#include "astro.h"
 
 extern jmp_buf j;
 

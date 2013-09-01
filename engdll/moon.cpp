@@ -41,7 +41,7 @@ static double cns[6] = {  2.732158213e1,  3.652596407e2,
 	m[4]...............M5   m[5]...............M6
 	longitude..........L    longitude_moon.....LAM  */
 
-MINU __declspec(dllexport) moon_minutes( JULIAN *j, MINU *asc_node )
+MINU moon_minutes( JULIAN *j, MINU *asc_node )
 {
  int i;
  LONG_DOUBLE mean_long, mean_anom_moon, mean_anom_sun, mean_elong_moon;
