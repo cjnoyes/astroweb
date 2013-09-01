@@ -114,19 +114,19 @@ int ChartCompiler::cleanUp( int ok )
 int doCompileChart(char *type) {
    ChartCompiler *comp = NULL;
    
-   if (strcmpi(type,"natal")==0) {
+   if (strcmp(type,"natal")==0) {
 	   comp = new NatalChartCompiler(Numeric);
    }
-   else if (strcmpi(type,"compat")==0){
+   else if (strcmp(type,"compat")==0){
 	   comp = new CompChartCompiler(Compatibility);
    }
-   else if (strcmpi(type,"compos")==0){
+   else if (strcmp(type,"compos")==0){
 	   comp = new CompChartCompiler(Compos);
    }
-   else if (strcmpi(type,"progr")==0){
+   else if (strcmp(type,"progr")==0){
 	   comp = new ProgChartCompiler(Progress);
    }
-   else if (strcmpi(type,"trans")==0){
+   else if (strcmp(type,"trans")==0){
 	   comp = new TransChartCompiler(Transits);
    }
    if (comp != NULL) {

@@ -14,22 +14,22 @@ int DataReader::readBirth(AS_DATA &rec) {
 	do {
 		type = readLine();
 		if (type == VARIABLE_RD) {
-			if (strcmpi(key,"date")==0) {
+			if (strcmp(key,"date")==0) {
 				parseDate(rec.birth_date);
 			}
-			else if (strcmpi(key,"time")==0) {
+			else if (strcmp(key,"time")==0) {
 				parseTime(rec.birth_time);
 			}
-			else if (strcmpi(key,"long")==0) {
+			else if (strcmp(key,"long")==0) {
 				parseLongLat(rec.longitude);
 			}
-			else if (strcmpi(key,"lat")==0) {
+			else if (strcmp(key,"lat")==0) {
 				parseLongLat(rec.latitude);
 			}
-			else if (strcmpi(key,"tzhours")==0) {
+			else if (strcmp(key,"tzhours")==0) {
 				parseInt(rec.hour_adjust);
 			}
-			else if (strcmpi(key,"tzminutes")==0) {
+			else if (strcmp(key,"tzminutes")==0) {
 				parseInt(rec.minutes_adjust);
 			}
 		}
@@ -54,10 +54,10 @@ int DataReader::readRect(RECT_DATA &rect) {
 	do {
 		type = readLine();
 		if (type == VARIABLE_RD) {
-			if (strcmpi(key,"known")==0) {
+			if (strcmp(key,"known")==0) {
 			   parseInt(rect.birth_time_known);
 			}
-			else if (strcmpi(key,"system")==0) {
+			else if (strcmp(key,"system")==0) {
 			   parseInt(rect.rect_system);
 			}
 		}
@@ -70,16 +70,16 @@ int DataReader::readTrans(TRANS_DATA &trans) {
 	do {
 		type = readLine();
 		if (type == VARIABLE_RD) {
-			if (strcmpi(key,"count")==0) {
+			if (strcmp(key,"count")==0) {
 				parseInt(trans.num_transits);
 			}
-			else if (strcmpi(key,"start")==0) {
+			else if (strcmp(key,"start")==0) {
 				parseInt(trans.start_planet);
 			}
-			else if (strcmpi(key,"end")==0) {
+			else if (strcmp(key,"end")==0) {
 				parseInt(trans.end_planet);
 			}
-			else if (strcmpi(key,"offset")==0) {
+			else if (strcmp(key,"offset")==0) {
 				parseDate(trans.interval_date);
 			}
 		}
@@ -92,10 +92,10 @@ int DataReader::readProg(PROGR_DATA &prog) {
 	do {
 		type = readLine();
 		if (type == VARIABLE_RD) {
-			if (strcmpi(key,"system")==0) {
+			if (strcmp(key,"system")==0) {
 				parseInt(prog.progress_system);
 			}
-			else if (strcmpi(key,"date")==0) {
+			else if (strcmp(key,"date")==0) {
 			    parseDate(prog.offset);
 			}
 		}
