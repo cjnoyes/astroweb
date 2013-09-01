@@ -32,7 +32,6 @@
 #define BOOL short
 #endif
 #define OPENMODEREAD "r"
-#endif
 #else
 #define OPENMODEREAD "rb"
 #endif
