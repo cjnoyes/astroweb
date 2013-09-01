@@ -30,6 +30,7 @@
 #ifndef WINVER
 #ifndef BOOL
 #define BOOL short
+#endif
 #define OPENMODEREAD "r"
 #endif
 #else
