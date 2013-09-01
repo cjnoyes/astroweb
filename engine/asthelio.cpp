@@ -22,8 +22,9 @@ extern double helio_long;
 
 extern void GetHelioPlanetData( int plan, AS_INF *inf, double jul );
 
+#ifdef WINVER
 extern void fpehnd(int sig, int num );
-
+#endif
 void helio_misc_calc( AS_INF  *ptr, BITS code, short year )
 {
  if ( code & SIDEREAL )
@@ -62,9 +63,11 @@ void helio_do_calc( AS_INF  *info, AS_DATA *data, BITS mode, DATA_PACKET *dpk )
  if ( setjmp( j ) ) {        /* Math Error Occurred */
     return;
     }
+ #ifdef WINVER
  if ( signal( SIGFPE, (void(*)(int))fpehnd ) == SIG_ERR ) {
     return;
     }
+ #endif
  if ( mode & NOBIRTHTIM ){
     bm = dpk->rdp->trial.minutes;
     data->hour_adjust = noon_date( &data->birth_date, &data->noon_date,

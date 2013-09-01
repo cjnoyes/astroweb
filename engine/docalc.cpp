@@ -60,9 +60,9 @@ int _matherr( struct _exception *e )
 }
 */
 
-#ifndef WINVER
-typedef void (*sigtype)(int sig);
 
+typedef void (*sigtype)(int sig);
+#ifdef WINVER
 void fpehnd(int sig, int num )
 {
  static char *errs[] = {"", "Invalid", "Denormal", "Divide By Zero",

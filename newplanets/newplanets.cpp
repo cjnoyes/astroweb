@@ -1,7 +1,6 @@
 #include <stdafx.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #include "astro.h"
 #include "kep.h"
 // newplanets.cpp : Defines the entry point for the console application.
