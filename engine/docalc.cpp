@@ -178,7 +178,7 @@ void do_calc( AS_INF *info, AS_DATA *data, BITS mode, NUM house_proc,
  if ( setjmp( j ) ) {        /* Math Error Occurred */
     return;
     }
- #ifndef WINVER
+ #ifdef WINVER
  if ( signal( SIGFPE, (sigtype)fpehnd ) == SIG_ERR ) {
     return;
     }
