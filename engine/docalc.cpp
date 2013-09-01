@@ -60,6 +60,7 @@ int _matherr( struct _exception *e )
 }
 */
 
+#ifndef WINVER
 typedef void (*sigtype)(int sig);
 
 void fpehnd(int sig, int num )
@@ -79,7 +80,7 @@ void fpehnd(int sig, int num )
  longjmp( j, 2 );
  return;
 }
-
+#endif
 /* module to do do calcualtions and call other modules */
 
 /* function to determine if a sign is critical. Returns 1
@@ -177,9 +178,11 @@ void do_calc( AS_INF *info, AS_DATA *data, BITS mode, NUM house_proc,
  if ( setjmp( j ) ) {        /* Math Error Occurred */
     return;
     }
+ #ifndef WINVER
  if ( signal( SIGFPE, (sigtype)fpehnd ) == SIG_ERR ) {
     return;
     }
+ #endif
  if ( !data->longitude.dir || !data->latitude.dir ) {
     alert_box( "", "Longitude or Latitutde Are Not Set!" );
     }
