@@ -18,10 +18,14 @@ astroweb --type <type> --job <key> [--home <dir>]
 If not provided home directory is assumed to be the directory from where astroweb is running
 
 --job is the key for job or session.
+
 --type is one of natal, compat, compos, trans, progr
 
 From the session directory...
+
 configuration settings comes from <key>.conf
+
 Input parameters come from <key>.in
+
 output of program is written to <key>.dat
 
