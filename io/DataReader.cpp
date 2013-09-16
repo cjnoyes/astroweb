@@ -133,6 +133,10 @@ int DataReader::readData() {
 			else if (strcmp("[ProgrData]",section)==0) {
 				type=readProg(progress_data);
 			}
+			else {
+				alert_box("","Unknown Section %s\n", section);
+				exit(2);
+			}
 		}
 	} while (type != END_RD);
 	return type;
@@ -146,7 +150,7 @@ int DataReader::readLine() {
 	   if (ptr != NULL) {
 		   while (*ptr ==' ') {
 		      ptr++;
-		   }			   
+		   }
 	   }
 	   else {
 		   return END_RD;
@@ -173,5 +177,5 @@ int DataReader::readLine() {
 		strcpy(value,ptr2+1);
 		strcpy(key,ptr);
 		return VARIABLE_RD;
-	}	
+	}
 }
